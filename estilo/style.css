@@ -63,6 +63,7 @@ header > p {
     padding-right: 10px;  /*ajusta a margin direita do texto menor pra não quebrar ao diminuir*/
     padding-left: 10px;  /*ajusta a margin esquerda do texto menor pra não quebrar ao diminuir*/
     margin: auto; /*centraliza o texto menor*/
+    padding-bottom: 50px;
     text-shadow: 2px 2px 0px rgba(0, 0, 0.315); /*colocando sombra no meu paragrafo menor*/
 }
 
