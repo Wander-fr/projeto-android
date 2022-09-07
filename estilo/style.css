@@ -1,0 +1,203 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,330;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+@font-face {
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+ /* root é uma pseudo classe, posso trabalhar variaveis dentro dele. para usar variavel CSS temos sempre que usar (--) dois traços.*/
+:root {
+    --cor0: #ebe5c5;
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Bebas Neue', cursive;
+    --fonte-android: 'Android', cursive;
+}
+
+/* asteristico(*) é um seletor de configuração global ou seja, ele seleciona todos os elementos do html.Exemplo abaixo.*/
+* { 
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color:var(--cor0);
+    font-family: var(--fonte-padrao);
+}
+
+a.externo::after { /*colocar um emoji de link em cada link externo ou seja link  que seja para fora do site*/
+    content: '\00A0\1F517'; /*coloquei o elemento de link que é uma corrente e dei um espaço antes com o comando (00A0)*/ 
+}
+
+header {
+   background-image: linear-gradient(to bottom, var(--cor3), var(--cor5)) ; /*colocar um degradê no cabecalho*/
+    min-height: 150px; /*altura minima do cabeçalho*/
+    text-align: center;  /*centralizar o texto do cabecalho*/ 
+    padding-top: 40px;  /*criar uma margim no meu cabecalho*/
+}
+
+header > h1 {
+    color: white;
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    font-weight:  normal; /*fonte normal sem negrito*/
+    margin-bottom: 20px; /*colocar um espaço abaixo do titiulo do cabeçalho*/
+    text-shadow: 2px 2px 0px rgb(0, 0, 0.267); /*colocando sombra no meu h1*/
+}
+
+header > p {
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    color: white;
+    max-width:  600px;  /*ajusta a larguara do texto menor do cabecalho*/
+    padding-right: 10px;  /*ajusta a margin direita do texto menor pra não quebrar ao diminuir*/
+    padding-left: 10px;  /*ajusta a margin esquerda do texto menor pra não quebrar ao diminuir*/
+    margin: auto; /*centraliza o texto menor*/
+    text-shadow: 2px 2px 0px rgba(0, 0, 0.315); /*colocando sombra no meu paragrafo menor*/
+}
+
+nav { /*configurar o meu menu*/
+    background-color: var(--cor5);
+    padding: 10px; /*deixar a letra mais gordinha do meu menu*/
+    box-shadow: 0px 7px 7px rgb(0, 0, 0.363); /*colocar sombra no menu*/
+}
+
+nav > a {
+    color: var(--cor1); /*mudou acor do meu menu*/
+    padding:  10px; /*deu um espaço entre os nomes do meu menu*/
+    border-radius: 5px; /*colocando uma borda quando passo o mouse em cima na animação*/
+    text-decoration: none; /* tirar o sublinhado*/
+    font-weight: bold; /*colocar os nomes em negrito*/
+    transition-duration: .5s; /*quando passar o mouse em cima ele leva um segundo de transiação*/
+}
+nav > a:hover { /*colocar uma animação para mudar de cor ao passar o mouse em cima*/
+    background-color: var(--cor3);
+    color: var(--cor5);
+}
+
+ main {
+    min-width: 300px; /*largura minima da imagem ao diminuir de tela */
+    max-width: 1000px; /*largura maxima ao aumentar de tela faz com que a imagem não quebre e se ajuste   */
+    margin: auto; /*centralizar a imagem no meio */
+    padding: 20px; /*ajustar o texto mais a esquerda, afastando da borda direita */
+    background-color: white;
+    box-shadow: 0px 0px 10px black; /*colocar sombra nas laterais do meu conteúdo */
+    border-bottom-left-radius: 10px; /*aredonda só o roda pé do lado esquerdo */
+    border-bottom-right-radius: 10px; /*aredonda só o roda pé do lado direto*/
+ }
+
+main h1 {
+    color: var(--cor3);
+    font-family: var(--fonte-android);
+    font-size: 1.8em;
+}
+
+main h2 {
+    font-family: var(--fonte-android);
+    color: var(--cor4);
+    font-size: 1.3em;
+    font-weight:  normal; /*fonte normal sem negrito*/
+    background-image: linear-gradient(to right, var(--cor1), transparent); /*cria um degradê a esquerda */
+    text-indent: 8px; /* alinha a borda a esquerda do h2*/
+}
+main p {
+    margin: 15px 0px; /*cima, direita, baixo, esquerda, essa configuração de margim é igual a um ponteiro de relógio.*/
+    text-align: justify; /*alinhar as bordas do texto tanto de um lado como do outro*/
+    text-indent: 30px; /*recuo do parágrafo ou seja afasta um pouco o inicio do paragrafo */
+    line-height: 2em; /*configuração de epacamento entre uma linha de parágrafo e outra*/
+}
+main strong {
+    color: var(--cor4);
+    font-weight: bold; /*deixar em negrito*/
+}
+
+main a {
+    text-decoration: none; /*tirar o sublinhado*/
+    font-weight: bold; /*colocar em negrito*/
+    color: var(--cor5);
+    background-color: var(--cor1);
+    padding: 2px 6px;
+}
+
+main a:hover {
+    text-decoration: underline; /*colocar o underline*/
+    background-color: var(--cor4);
+}
+
+main img { /* imagem da irina blok */
+    width: 100%; /* diexar a larguara da imagem em 100% ao enlarguecer a tela o diminuir */
+
+}
+
+main img.pequena { /* Configuar a imagem do boneco com andorid */
+   max-width: 350px; /* Deixar a imgem do boneco android melhor ao se ajustar as telas*/
+    display: block; /* faz com que a imagem centralize*/
+    margin: auto; /* centralizar a imagem */
+}
+
+/*Para configurar o video que colocamos do youtube tivemos que fazer uma gambiarra, ou seja alguns comando que meio que estratejicos */
+div.video { /*configuração de video */
+    background-color:var(--cor5);
+    margin: 0px -20px 30px -20px; /*serve para colar as margins do backgound-color*/ 
+    padding: 20px; /*serve para da um espaco da margim do video*/
+    padding-bottom: 56%; /*configuar umas barras pretas que tem ao clicar para asistir o video*/
+    position: relative;
+
+}
+ div.video > iframe {
+    position: absolute;
+    top: 5%; /*configuração de distancia lateral de cima*/
+    left: 5%; /* configuraçã de distancia lateral do lado */
+    width: 90%;
+    height: 90%;
+   
+
+ }
+
+footer {
+    background-color: var(--cor5);
+    color: white;
+    text-align: center; /* centralizar o roda pé*/
+    font-size: 0.8em; /* tamanho da fonte do roda pé*/
+    padding: 5px; /*ajustando o tamanho das margins do roda pe*/
+}
+aside {
+    background-color: var(--cor1);
+    padding: 10px; /*colocar uma borda no backgound-color dentro do aside*/
+    border-radius: 10px; /*colocar uma borda redonda */
+    box-shadow: 3px 3px 8px black; /*colocar uma sombra no backgound-color do parágrafo saiba mais */
+}
+
+aside > h3 {
+    background-color: var(--cor4);
+    color: white;
+    padding: 10px; /*colocar margim no saiba mais*/
+    margin: -10px -10px 0px -10px; /*configurar as bordas da margim para fora */
+    border-radius: 10px 10px 0px 0px; /*aredonda as margens do nosso saiba mais*/
+}
+aside  > ul {
+    list-style-type: '\2714\00A0\00A0'; /*serve para mudar os sinais em vez de ponto um da sua preferencia no caso o sinal de check, (00A0) quer dizer espaco sem quebra.*/
+    list-style-position: inside; /*serve para mudar a posição da lista, ou seja coloca as bolinhas para dentro da lista*/
+    columns: 2; /*serve para dividir as colunas*/
+}
+
+footer a {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none; /* colocar underline*/   
+}
+
+footer a:hover {
+    text-decoration: underline; /*tirar underline*/
+    color: var(--cor1);
+}
